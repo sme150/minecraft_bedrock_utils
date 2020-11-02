@@ -6,8 +6,8 @@ def spacer():
 def calculate_spawn_location (start_x_coordinate, start_z_coordinate):
     coordinate_map = []
     for x_coordinate in constant.GUARDIAN_SPAWN_MAP:
-        for y_coordinate in constant.GUARDIAN_SPAWN_MAP:
-            coordinate_map.append("{0},{1}".format(x_coordinate,y_coordinate))
+        for z_coordinate in constant.GUARDIAN_SPAWN_MAP:
+            coordinate_map.append("{0},{1}".format(x_coordinate + start_x_coordinate, z_coordinate + start_z_coordinate))
     return coordinate_map
 
 try:
@@ -15,7 +15,7 @@ try:
     coord_count = 1
     print (spacer())
     print ("*** Guardian Spawn Mapper 1.0 ***\n")
-    print ("- NorthWest Corner of Monument {0}, {1} -\n".format(int(sys.argv[1]), int(sys.argv[2])))
+    print ("NorthWest Corner of Monument ({0}, {1}) \n".format(int(sys.argv[1]), int(sys.argv[2])))
     for coordinate in coords_map:
         print ("Guardian Spawn Point {0}: {1}".format(coord_count, coordinate))
         coord_count = coord_count + 1
