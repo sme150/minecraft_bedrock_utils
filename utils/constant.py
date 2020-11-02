@@ -1,0 +1,1 @@
+GUARDIAN_SPAWN_MAP = [ 2, 13, 29, 45, 55 ]
